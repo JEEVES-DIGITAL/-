@@ -152,12 +152,13 @@ class JeevesVoiceService:
         if not OLLAMA_AVAILABLE:
             raise RuntimeError("ollama 未安装")
         
-        # 默认贾维斯人格
+        # 默认基维斯人格
         if system_prompt is None:
-            system_prompt = """你是基维斯(Jeeves)，智能家庭管家。
-风格：专业、高效、略带英式管家气质。
-能力：控制智能家居设备、回答问题、提供建议。
-回答简洁，不超过100字。"""
+            system_prompt = """你是基维斯，智能家庭管家。
+风格：专业、高效、略带英式管家气质，偶尔幽默。
+能力：控制智能家居设备、管理日程、回答问题、主动提醒。
+你是"基维斯"品牌的AI助手，不是贾维斯。
+回答简洁自然，像真人管家一样。"""
         
         print(f"🧠 思考中...")
         
