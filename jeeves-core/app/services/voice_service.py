@@ -54,7 +54,7 @@ class JeevesVoiceService:
     def __init__(
         self,
         whisper_model: str = "base",
-        llm_model: str = "phi4",
+        llm_model: str = "gemma3:27b",
         voice: str = "male_calm",
         device: str = "cpu"
     ):

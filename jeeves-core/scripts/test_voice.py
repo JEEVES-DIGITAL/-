@@ -86,7 +86,7 @@ async def test_llm():
     try:
         import ollama
         
-        model = "phi4"
+        model = "gemma3:27b"
         print(f"🤖 测试模型: {model}")
         
         response = ollama.chat(
@@ -105,7 +105,7 @@ async def test_llm():
     except Exception as e:
         print(f"❌ 失败: {e}")
         print("   提示: 请确保Ollama已安装并运行")
-        print("   运行: ollama run phi4")
+        print("   运行: ollama run gemma3:27b")
         return False
 
 
@@ -117,7 +117,7 @@ async def test_full_pipeline():
     try:
         jeeves = JeevesVoiceService(
             whisper_model="base",
-            llm_model="phi4",
+            llm_model="gemma3:27b",
             voice="male_calm"
         )
         
