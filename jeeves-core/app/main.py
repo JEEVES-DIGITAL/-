@@ -4,7 +4,8 @@ from contextlib import asynccontextmanager
 
 from app.config import get_settings
 from app.database import init_db
-from app.routers import system, devices, chat, automations
+from app.routers import system, devices, chat, automations, voice
+from app.routers.voice import init_voice_service
 
 
 @asynccontextmanager
@@ -17,6 +18,12 @@ async def lifespan(app: FastAPI):
     # 初始化数据库
     await init_db()
     print("✅ 数据库初始化完成")
+    
+    # 初始化语音服务（可选，失败不阻断启动）
+    try:
+        init_voice_service()
+    except Exception as e:
+        print(f"⚠️ 语音服务初始化失败: {e}")
     
     yield
     
@@ -47,6 +54,7 @@ app.include_router(system.router)
 app.include_router(devices.router)
 app.include_router(chat.router)
 app.include_router(automations.router)
+app.include_router(voice.router)
 
 
 # WebSocket连接管理
