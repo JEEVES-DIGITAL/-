@@ -4,8 +4,9 @@ from contextlib import asynccontextmanager
 
 from app.config import get_settings
 from app.database import init_db
-from app.routers import system, devices, chat, automations, voice
+from app.routers import system, devices, chat, automations, voice, home_assistant
 from app.routers.voice import init_voice_service
+from app.routers.home_assistant import init_ha_client
 
 
 @asynccontextmanager
@@ -24,6 +25,12 @@ async def lifespan(app: FastAPI):
         init_voice_service()
     except Exception as e:
         print(f"⚠️ 语音服务初始化失败: {e}")
+    
+    # 初始化Home Assistant（可选）
+    try:
+        init_ha_client()
+    except Exception as e:
+        print(f"⚠️ Home Assistant 初始化失败: {e}")
     
     yield
     
@@ -55,6 +62,7 @@ app.include_router(devices.router)
 app.include_router(chat.router)
 app.include_router(automations.router)
 app.include_router(voice.router)
+app.include_router(home_assistant.router)
 
 
 # WebSocket连接管理
