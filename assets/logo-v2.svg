@@ -1,0 +1,53 @@
+<!-- 基维斯 Logo SVG 初版 - 方案B: 房屋+大脑 -->
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="houseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E3A5F"/>
+      <stop offset="100%" style="stop-color:#2C5282"/>
+    </linearGradient>
+    <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4AA"/>
+      <stop offset="100%" style="stop-color:#00B894"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 房屋主体 -->
+  <rect x="40" y="80" width="120" height="100" rx="8" fill="url(#houseGradient)"/>
+  
+  <!-- 屋顶 -->
+  <path d="M 30 80 L 100 30 L 170 80" fill="none" stroke="#1E3A5F" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M 30 80 L 100 30 L 170 80 L 160 80 L 100 40 L 40 80 Z" fill="#1E3A5F"/>
+  
+  <!-- AI大脑 (房屋内的核心) -->
+  <circle cx="100" cy="110" r="25" fill="url(#brainGradient)"/>
+  
+  <!-- 大脑神经网络 -->
+  <circle cx="90" cy="105" r="3" fill="white"/>
+  <circle cx="110" cy="105" r="3" fill="white"/>
+  <circle cx="100" cy="118" r="3" fill="white"/>
+  <circle cx="85" cy="115" r="2" fill="white" opacity="0.7"/>
+  <circle cx="115" cy="115" r="2" fill="white" opacity="0.7"/>
+  
+  <!-- 连接线 -->
+  <line x1="90" y1="105" x2="110" y2="105" stroke="white" stroke-width="1.5"/>
+  <line x1="90" y1="105" x2="100" y2="118" stroke="white" stroke-width="1.5"/>
+  <line x1="110" y1="105" x2="100" y2="118" stroke="white" stroke-width="1.5"/>
+  <line x1="85" y1="115" x2="90" y2="105" stroke="white" stroke-width="1" opacity="0.7"/>
+  <line x1="115" y1="115" x2="110" y2="105" stroke="white" stroke-width="1" opacity="0.7"/>
+  
+  <!-- 门 -->
+  <rect x="85" y="130" width="30" height="50" rx="4" fill="#1A365D"/>
+  <circle cx="108" cy="155" r="2" fill="#00D4AA"/>
+  
+  <!-- 窗户 -->
+  <rect x="50" y="130" width="25" height="25" rx="3" fill="#4A5568"/>
+  <line x1="62.5" y1="130" x2="62.5" y2="155" stroke="#1E3A5F" stroke-width="2"/>
+  <line x1="50" y1="142.5" x2="75" y2="142.5" stroke="#1E3A5F" stroke-width="2"/>
+  
+  <rect x="125" y="130" width="25" height="25" rx="3" fill="#4A5568"/>
+  <line x1="137.5" y1="130" x2="137.5" y2="155" stroke="#1E3A5F" stroke-width="2"/>
+  <line x1="125" y1="142.5" x2="150" y2="142.5" stroke="#1E3A5F" stroke-width="2"/>
+  
+  <!-- 发光效果 -->
+  <circle cx="100" cy="110" r="35" fill="url(#brainGradient)" opacity="0.2"/>
+</svg>
